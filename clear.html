@@ -143,7 +143,7 @@
     document.getElementById("powerVal").innerText = `${power} W`;
     document.getElementById("usedPercent").innerText = usedPercent.toFixed(1);
 
-    document.getElementById("summary Box").innerHTML = `
+    document.getElementById("summaryBox").innerHTML = `
       <p>🔹 Today: <b>${today} kWh</b> (Rs ${(today * unitPrice).toFixed(2)})</p>
       <p>🔹 This Week: <b>${week} kWh</b> (Rs ${(week * unitPrice).toFixed(2)})</p>
       <p>🔹 This Month: <b>${month} kWh</b> (Rs ${(month * unitPrice).toFixed(2)})</p>
@@ -199,6 +199,26 @@
   setInterval(updateDashboard, 5000);
   setInterval(updateDateTime, 1000);
 </script>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIza....",  // <-- Paste your values here
+    authDomain: "your-project-id.firebaseapp.com",
+    databaseURL: "https://your-project-id-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "your-project-id",
+    storageBucket: "your-project-id.appspot.com",
+    messagingSenderId: "1234567890",
+    appId: "1:1234567890:web:abcdefgh"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+</script>
+
 
 </body>
 </html>
